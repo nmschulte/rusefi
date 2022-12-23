@@ -1,4 +1,4 @@
-// this section was generated automatically by rusEFI tool ConfigDefinition.jar based on kinetis_gen_config.bat integration/rusefi_config.txt Sat Dec 17 05:11:56 UTC 2022
+// this section was generated automatically by rusEFI tool ConfigDefinition.jar based on kinetis_gen_config.bat integration/rusefi_config.txt Sat Dec 31 19:31:24 UTC 2022
 // by class com.rusefi.output.CHeaderConsumer
 // begin
 #pragma once
@@ -916,9 +916,14 @@ struct engine_configuration_s {
 	 */
 	engine_load_mode_e fuelAlgorithm;
 	/**
+	%
 	 * offset 381
 	 */
-	uint8_t alignmentFill_at_1[3];
+	uint8_t ALSMaxTPS;
+	/**
+	 * offset 382
+	 */
+	uint8_t unusedHerealignmentFill_at_1[2];
 	/**
 	 * This is the injection strategy during engine start. See Fuel/Injection settings for more detail. It is suggested to use "Simultaneous".
 	 * offset 384
@@ -1799,6 +1804,7 @@ struct engine_configuration_s {
 	 */
 	uint32_t verboseCanBaseAddress;
 	/**
+	 * Boost Voltage
 	v
 	 * offset 788
 	 */
@@ -2695,7 +2701,7 @@ struct engine_configuration_s {
 	bool sdTriggerLog : 1 {};
 	/**
 	offset 1372 bit 29 */
-	bool unused_1484_bit_29 : 1 {};
+	bool ALSActivateInverted : 1 {};
 	/**
 	offset 1372 bit 30 */
 	bool unused_1484_bit_30 : 1 {};
@@ -3149,76 +3155,76 @@ struct engine_configuration_s {
 	bool unused1130 : 1 {};
 	/**
 	offset 1628 bit 8 */
-	bool unusedBit_541_8 : 1 {};
+	bool unusedBit_542_8 : 1 {};
 	/**
 	offset 1628 bit 9 */
-	bool unusedBit_541_9 : 1 {};
+	bool unusedBit_542_9 : 1 {};
 	/**
 	offset 1628 bit 10 */
-	bool unusedBit_541_10 : 1 {};
+	bool unusedBit_542_10 : 1 {};
 	/**
 	offset 1628 bit 11 */
-	bool unusedBit_541_11 : 1 {};
+	bool unusedBit_542_11 : 1 {};
 	/**
 	offset 1628 bit 12 */
-	bool unusedBit_541_12 : 1 {};
+	bool unusedBit_542_12 : 1 {};
 	/**
 	offset 1628 bit 13 */
-	bool unusedBit_541_13 : 1 {};
+	bool unusedBit_542_13 : 1 {};
 	/**
 	offset 1628 bit 14 */
-	bool unusedBit_541_14 : 1 {};
+	bool unusedBit_542_14 : 1 {};
 	/**
 	offset 1628 bit 15 */
-	bool unusedBit_541_15 : 1 {};
+	bool unusedBit_542_15 : 1 {};
 	/**
 	offset 1628 bit 16 */
-	bool unusedBit_541_16 : 1 {};
+	bool unusedBit_542_16 : 1 {};
 	/**
 	offset 1628 bit 17 */
-	bool unusedBit_541_17 : 1 {};
+	bool unusedBit_542_17 : 1 {};
 	/**
 	offset 1628 bit 18 */
-	bool unusedBit_541_18 : 1 {};
+	bool unusedBit_542_18 : 1 {};
 	/**
 	offset 1628 bit 19 */
-	bool unusedBit_541_19 : 1 {};
+	bool unusedBit_542_19 : 1 {};
 	/**
 	offset 1628 bit 20 */
-	bool unusedBit_541_20 : 1 {};
+	bool unusedBit_542_20 : 1 {};
 	/**
 	offset 1628 bit 21 */
-	bool unusedBit_541_21 : 1 {};
+	bool unusedBit_542_21 : 1 {};
 	/**
 	offset 1628 bit 22 */
-	bool unusedBit_541_22 : 1 {};
+	bool unusedBit_542_22 : 1 {};
 	/**
 	offset 1628 bit 23 */
-	bool unusedBit_541_23 : 1 {};
+	bool unusedBit_542_23 : 1 {};
 	/**
 	offset 1628 bit 24 */
-	bool unusedBit_541_24 : 1 {};
+	bool unusedBit_542_24 : 1 {};
 	/**
 	offset 1628 bit 25 */
-	bool unusedBit_541_25 : 1 {};
+	bool unusedBit_542_25 : 1 {};
 	/**
 	offset 1628 bit 26 */
-	bool unusedBit_541_26 : 1 {};
+	bool unusedBit_542_26 : 1 {};
 	/**
 	offset 1628 bit 27 */
-	bool unusedBit_541_27 : 1 {};
+	bool unusedBit_542_27 : 1 {};
 	/**
 	offset 1628 bit 28 */
-	bool unusedBit_541_28 : 1 {};
+	bool unusedBit_542_28 : 1 {};
 	/**
 	offset 1628 bit 29 */
-	bool unusedBit_541_29 : 1 {};
+	bool unusedBit_542_29 : 1 {};
 	/**
 	offset 1628 bit 30 */
-	bool unusedBit_541_30 : 1 {};
+	bool unusedBit_542_30 : 1 {};
 	/**
 	offset 1628 bit 31 */
-	bool unusedBit_541_31 : 1 {};
+	bool unusedBit_542_31 : 1 {};
 	/**
 	 * Time between bench test pulses
 	ms
@@ -3926,16 +3932,19 @@ struct engine_configuration_s {
 	 */
 	gppwm_channel gppwm[GPPWM_CHANNELS];
 	/**
+	 * Boost Current
 	mA
 	 * offset 2932
 	 */
 	uint16_t mc33_i_boost;
 	/**
+	 * Peak Current
 	mA
 	 * offset 2934
 	 */
 	uint16_t mc33_i_peak;
 	/**
+	 * Hold Current
 	mA
 	 * offset 2936
 	 */
@@ -3952,6 +3961,7 @@ struct engine_configuration_s {
 	 */
 	uint16_t mc33_t_peak_off;
 	/**
+	 * Peak phase duration
 	us
 	 * offset 2942
 	 */
@@ -3967,6 +3977,7 @@ struct engine_configuration_s {
 	 */
 	uint16_t mc33_t_hold_off;
 	/**
+	 * Hold phase duration
 	us
 	 * offset 2948
 	 */
@@ -4379,10 +4390,9 @@ struct engine_configuration_s {
 	 */
 	uint8_t alsEtbPosition;
 	/**
-	deg
 	 * offset 3888
 	 */
-	int ALSTimingRetard;
+	uint8_t unusedAlignmentFill_at_33[4];
 	/**
 	%
 	 * offset 3892
@@ -5193,7 +5203,7 @@ struct persistent_config_s {
 	 */
 	uint16_t alsIgnRetardrpmBins[4];
 	/**
-	deg
+	percent
 	 * offset 21344
 	 */
 	scaled_channel<int16_t, 10, 1> ALSFuelAdjustment[4][4];
@@ -5219,4 +5229,4 @@ struct persistent_config_s {
 static_assert(sizeof(persistent_config_s) == 22896);
 
 // end
-// this section was generated automatically by rusEFI tool ConfigDefinition.jar based on kinetis_gen_config.bat integration/rusefi_config.txt Sat Dec 17 05:11:56 UTC 2022
+// this section was generated automatically by rusEFI tool ConfigDefinition.jar based on kinetis_gen_config.bat integration/rusefi_config.txt Sat Dec 31 19:31:24 UTC 2022
